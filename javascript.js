@@ -22,11 +22,11 @@ let player = prompt("Choose rock, paper or scissors:");
 
 
 
-let winner = function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "rock" ||
       playerSelection === "paper" && computerSelection === "paper" ||
       playerSelection === "scissors" && computerSelection === "scissors") {
-        return "It's a draw";
+        return "It's a draw!";
       } else if (playerSelection === "rock" && computerSelection === "scissors" ||
                  playerSelection === "paper" && computerSelection === "rock"  ||
                  playerSelection === "scissors" && computerSelection === "paper") {
@@ -36,11 +36,10 @@ let winner = function playRound(playerSelection, computerSelection) {
                  }
       
 } 
-
-console.log(winner(player,computer));
-
 function game() {
-    
-
+ console.log(`Player's choice: ${player}`);
+ console.log(`Computer's choice: ${computer}`);
+ console.log(playRound(player,computer));
 }
 
+game();

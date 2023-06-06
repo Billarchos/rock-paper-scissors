@@ -17,10 +17,10 @@ function getComputerChoice(value) {
 
 
 let computer = getComputerChoice(randomNumber());
-
 let player = prompt("Choose rock, paper or scissors:");
 
-
+let playerScore = 0;
+let computerScore= 0;
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "rock" ||
@@ -30,8 +30,10 @@ function playRound(playerSelection, computerSelection) {
       } else if (playerSelection === "rock" && computerSelection === "scissors" ||
                  playerSelection === "paper" && computerSelection === "rock"  ||
                  playerSelection === "scissors" && computerSelection === "paper") {
+                    playerScore++;
                     return "You win!";
                  } else {
+                    computerScore++;
                     return "You lose!";
                  }
       
@@ -40,6 +42,7 @@ function game() {
  console.log(`Player's choice: ${player}`);
  console.log(`Computer's choice: ${computer}`);
  console.log(playRound(player,computer));
+ console.log(`Your score: ${playerScore}  Computer score: ${computerScore}`);
 }
 
 game();
